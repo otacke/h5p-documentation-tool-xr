@@ -67,20 +67,11 @@
   display: block;
 }
 
-.h5p-documentation-tool-xr-page-container .h5p-documentation-tool-xr-page * {
-  visibility: hidden;
-}
-
-.h5p-documentation-tool-xr-page-container .h5p-documentation-tool-xr-page.current * {
-  visibility: visible;
-}
-
 /* Make things untabbable when export page is open */
 .h5p-documentation-tool-xr-main-content.hidden .h5p-navigation-menu,
 .h5p-documentation-tool-xr-main-content.hidden .h5p-documentation-tool-xr-page.current * {
   visibility: hidden;
 }
-
 
 /* Page header */
 .h5p-documentation-tool-xr-page .page-header {
