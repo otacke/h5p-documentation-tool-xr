@@ -2,12 +2,12 @@
  * Documentation tool module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher) {
+H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatcher) {
   // CSS Classes:
-  var MAIN_CONTAINER = 'h5p-documentation-tool';
-  var PAGES_CONTAINER = 'h5p-documentation-tool-page-container';
-  var PAGE_INSTANCE = 'h5p-documentation-tool-page';
-  var FOOTER = 'h5p-documentation-tool-footer';
+  var MAIN_CONTAINER = 'h5p-documentation-tool-xr';
+  var PAGES_CONTAINER = 'h5p-documentation-tool-xr-page-container';
+  var PAGE_INSTANCE = 'h5p-documentation-tool-xr-page';
+  var FOOTER = 'h5p-documentation-tool-xr-footer';
 
   /**
    * Initialize module.
@@ -119,7 +119,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
     this.$inner = $container.addClass(MAIN_CONTAINER);
 
     this.$mainContent = $('<div/>', {
-      'class': 'h5p-documentation-tool-main-content'
+      'class': 'h5p-documentation-tool-xr-main-content'
     }).appendTo(this.$inner);
 
     // Create pages
@@ -178,7 +178,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
     }
 
     var $navButton = $('<div>', {
-      'class': 'joubel-simple-rounded-button h5p-documentation-tool-nav-button ' + type,
+      'class': 'joubel-simple-rounded-button h5p-documentation-tool-xr-nav-button ' + type,
       'aria-label': navigationLabel,
       'title': navigationLabel,
       'aria-disabled': !enabled,
@@ -472,7 +472,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
     pageInstances.forEach(function (page) {
       var pageInstanceInput = [];
       var title = '';
-      if (page.libraryInfo.machineName === 'H5P.StandardPage') {
+      if (page.libraryInfo.machineName === 'H5P.StandardPageXR') {
         pageInstanceInput = page.getInputArray();
         title = page.getTitle();
       }
@@ -489,7 +489,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
   DocumentationTool.prototype.checkIfAllRequiredInputsAreFilled = function (pageInstances) {
     var allRequiredInputsAreFilled = true;
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.StandardPage') {
+      if (page.libraryInfo.machineName === 'H5P.StandardPageXR') {
         if (!page.requiredInputsIsFilled()) {
           allRequiredInputsAreFilled = false;
         }
@@ -584,7 +584,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
       if (page.libraryInfo.machineName === 'H5P.DocumentExportPage') {
         page.updateRequiredInputsFilled(titlesPagesIncomplete);
       }
-      else if (page.libraryInfo.machineName === 'H5P.StandardPage') {
+      else if (page.libraryInfo.machineName === 'H5P.StandardPageXR') {
         page.markRequiredInputFields();
       }
     });
@@ -596,7 +596,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
    */
   DocumentationTool.prototype.getIncompletePages = function () {
     return this.pageInstances.filter(function (page) {
-      return page.libraryInfo.machineName === 'H5P.StandardPage' &&
+      return page.libraryInfo.machineName === 'H5P.StandardPageXR' &&
         !page.requiredInputsIsFilled();
     });
   };
@@ -665,7 +665,7 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
       'en-US': ''
     };
     definition.extensions = {
-      'https://h5p.org/x-api/h5p-machine-name': 'H5P.DocumentationTool'
+      'https://h5p.org/x-api/h5p-machine-name': 'H5P.DocumentationToolXR'
     };
 
     return definition;
@@ -744,11 +744,11 @@ H5P.DocumentationTool = (function ($, NavigationMenu, JoubelUI, EventDispatcher)
     this.pageInstances.forEach(function (instance) {
       typeof instance.resetTask === 'function' && instance.resetTask();
     });
-    
+
     if (this.$pagesArray) { // only reset DOM if loaded
       this.movePage(0);
     }
   };
 
   return DocumentationTool;
-}(H5P.jQuery, H5P.DocumentationTool.NavigationMenu, H5P.JoubelUI, H5P.EventDispatcher));
+}(H5P.jQuery, H5P.DocumentationToolXR.NavigationMenu, H5P.JoubelUI, H5P.EventDispatcher));

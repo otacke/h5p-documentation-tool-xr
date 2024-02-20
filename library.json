@@ -1,13 +1,13 @@
 {
-  "title": "Documentation Tool",
-  "description": "Documentation tool for educational assessment.",
+  "title": "Documentation Tool (XR)",
+  "description": "Documentation tool (XR variant) for educational assessment.",
   "majorVersion": 1,
   "minorVersion": 8,
   "patchVersion": 24,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
-  "machineName": "H5P.DocumentationTool",
+  "machineName": "H5P.DocumentationToolXR",
   "embedTypes": [
     "iframe"
   ],
@@ -17,18 +17,18 @@
   },
   "preloadedCss": [
     {
-      "path": "navigation-menu.css"
+      "path": "navigation-menu-xr.css"
     },
     {
-      "path": "documentation-tool.css"
+      "path": "documentation-tool-xr.css"
     }
   ],
   "preloadedJs": [
     {
-      "path": "navigation-menu.js"
+      "path": "navigation-menu-xr.js"
     },
     {
-      "path": "documentation-tool.js"
+      "path": "documentation-tool-xr.js"
     }
   ],
   "editorDependencies": [

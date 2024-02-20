@@ -1,11 +1,11 @@
 var H5P = H5P || {};
-H5P.DocumentationTool = H5P.DocumentationTool || {};
+H5P.DocumentationToolXR = H5P.DocumentationToolXR || {};
 
 /**
  * Naivgation Menu module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.DocumentationTool.NavigationMenu = (function ($, EventDispatcher) {
+H5P.DocumentationToolXR.NavigationMenu = (function ($, EventDispatcher) {
 
   /**
    * @private
@@ -88,7 +88,7 @@ H5P.DocumentationTool.NavigationMenu = (function ($, EventDispatcher) {
         'aria-label': screenReaderFriendlyTitle
       }).appendTo($navigationMenuEntries);
 
-      H5P.DocumentationTool.handleButtonClick($navigationMenuEntry, function (event) {
+      H5P.DocumentationToolXR.handleButtonClick($navigationMenuEntry, function (event) {
         self.$documentationToolContaner.removeClass('expanded');
         self.docTool.movePage(pageIndex, event);
         var progressedEvent = self.docTool.createXAPIEventTemplate('progressed'); // Using the parent documentation tool to create xapi template
