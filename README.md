@@ -1,7 +1,7 @@
-H5P Documentation Tool
+H5P Documentation Tool (XR)
 ==========
 
-Documentation tool for educational assessment.
+Documentation tool (XR variant) for educational assessment.
 
 ## License
 
