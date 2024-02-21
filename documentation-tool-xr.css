@@ -2,18 +2,6 @@
   font-size: 16px;
 }
 
-/* Resets buttons styling */
-.h5p-documentation-tool-xr-main-content button {
-  font-family: Sans-Serif;
-  font-size: 1em;
-  background: none;
-  border: 0;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-}
 .h5p-documentation-tool-xr button::-moz-focus-inner {
   border: 0;
   padding: 0;
