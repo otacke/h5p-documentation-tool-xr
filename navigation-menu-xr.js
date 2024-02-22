@@ -120,7 +120,7 @@ H5P.DocumentationToolXR.NavigationMenu = (function ($, EventDispatcher) {
     const self = this;
 
     if (this.highlightIncompletePages === false) {
-      if (self.docTool.pageInstances[currentPageIndex].libraryInfo.machineName === 'H5P.DocumentExportPage') {
+      if (self.docTool.pageInstances[currentPageIndex].libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
         this.highlightIncompletePages = true;
       }
     }

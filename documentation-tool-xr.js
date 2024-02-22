@@ -61,7 +61,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
     // undefined for org users
     if (this.isSubmitButtonEnabled) {
       for (var i = 0; i < this.params.pagesList.length; i++) {
-        if (this.params.pagesList[i].library.split(' ')[0] === 'H5P.DocumentExportPage') {
+        if (this.params.pagesList[i].library.split(' ')[0] === 'H5P.DocumentExportPageXR') {
           this.isTask = true;
         }
       }
@@ -71,7 +71,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
 
     /**
      * Initialize Goal assessment state
-     * @param {H5P.GoalsAssessmentPage} instance Goal assesment instance
+     * @param {H5P.GoalsAssessmentPageXR} instance Goal assesment instance
      */
     self.setGoalAssesmentState = function (instance) {
       var assessmentGoals = self.getGoalAssessments(self.pageInstances);
@@ -136,7 +136,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
 
     this.navigationMenu = navigationMenu;
 
-    const goalAssesmentPageIndex = self.pageInstances.findIndex(pageInstance => pageInstance.libraryInfo.machineName === 'H5P.GoalsAssessmentPage');
+    const goalAssesmentPageIndex = self.pageInstances.findIndex(pageInstance => pageInstance.libraryInfo.machineName === 'H5P.GoalsAssessmentPageXR');
     if (goalAssesmentPageIndex > -1) {
       self.setGoalAssesmentState(goalAssesmentPageIndex);
     }
@@ -220,7 +220,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
       }
 
       var singlePage = H5P.newRunnable(page, self.id, undefined, undefined, childExtras);
-      if (singlePage.libraryInfo.machineName === 'H5P.DocumentExportPage') {
+      if (singlePage.libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
         singlePage.setExportTitle(self.params.taskDescription);
         singlePage.setSumbitEnabled(this.isSubmitButtonEnabled);
       }
@@ -408,10 +408,10 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
     var self = this;
     var pageInstance = self.pageInstances[toPageIndex];
 
-    if (pageInstance.libraryInfo.machineName === 'H5P.GoalsAssessmentPage') {
+    if (pageInstance.libraryInfo.machineName === 'H5P.GoalsAssessmentPageXR') {
       self.setGoals(self.pageInstances, newGoals);
     }
-    else if (pageInstance.libraryInfo.machineName === 'H5P.DocumentExportPage') {
+    else if (pageInstance.libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
 
       // Check if all required input fields are filled
       var allRequiredInputsAreFilled = self.checkIfAllRequiredInputsAreFilled(self.pageInstances);
@@ -456,7 +456,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
   DocumentationTool.prototype.getGoalAssessments = function (pageInstances) {
     var goals = [];
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.GoalsAssessmentPage') {
+      if (page.libraryInfo.machineName === 'H5P.GoalsAssessmentPageXR') {
         goals.push(page.getAssessedGoals());
       }
     });
@@ -508,7 +508,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
   DocumentationTool.prototype.getGoals = function (pageInstances) {
     var goals = [];
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.GoalsPage') {
+      if (page.libraryInfo.machineName === 'H5P.GoalsPageXR') {
         goals.push(page.getGoals());
       }
     });
@@ -522,7 +522,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
    */
   DocumentationTool.prototype.setGoals = function (pageInstances, goals) {
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.GoalsAssessmentPage') {
+      if (page.libraryInfo.machineName === 'H5P.GoalsAssessmentPageXR') {
         page.updateAssessmentGoals(goals);
       }
     });
@@ -534,7 +534,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
    */
   DocumentationTool.prototype.setDocumentExportOutputs  = function (pageInstances, inputs) {
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.DocumentExportPage') {
+      if (page.libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
         page.updateOutputFields(inputs);
       }
     });
@@ -553,7 +553,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
       return page.some(function (goal) {
         return goal.goalAnswer() !== -1;
       });
-    }) ? 'H5P.GoalsAssessmentPage' : 'H5P.GoalsPage';
+    }) ? 'H5P.GoalsAssessmentPageXR' : 'H5P.GoalsPageXR';
 
 
     pageInstances.forEach(function (page) {
@@ -563,7 +563,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
     });
 
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.DocumentExportPage') {
+      if (page.libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
         page.updateExportableGoals({inputArray: newGoals, title: assessmentPageTitle});
       }
     });
@@ -581,7 +581,7 @@ H5P.DocumentationToolXR = (function ($, NavigationMenu, JoubelUI, EventDispatche
 
     // Update document export page
     pageInstances.forEach(function (page) {
-      if (page.libraryInfo.machineName === 'H5P.DocumentExportPage') {
+      if (page.libraryInfo.machineName === 'H5P.DocumentExportPageXR') {
         page.updateRequiredInputsFilled(titlesPagesIncomplete);
       }
       else if (page.libraryInfo.machineName === 'H5P.StandardPageXR') {
