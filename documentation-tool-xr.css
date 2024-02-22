@@ -7,11 +7,6 @@
   padding: 0;
 }
 
-/* Fix for box sizing themes */
-.h5p-documentation-tool-xr * {
-  box-sizing: content-box;
-}
-
 .h5p-documentation-tool-xr .joubel-exportable-area {
   box-sizing: border-box;
 }
@@ -156,4 +151,9 @@
 /* ---------------------------- Responsive view ----------------------------- */
 .h5p-documentation-tool-xr .h5p-documentation-tool-xr-main-content.responsive .h5p-documentation-tool-xr-page-container {
   margin-left: 2.2em;
+}
+
+/* ------------------------- Subcontent Overrides --------------------------- */
+.h5p-image-hotspots .h5p-image-hotspot-close-popup-button {
+  right: 1em;
 }
