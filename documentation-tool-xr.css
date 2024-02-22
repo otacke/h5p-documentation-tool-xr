@@ -16,6 +16,19 @@
   box-sizing: border-box;
 }
 
+.h5p-documentation-tool-xr .h5p-documentation-tool-main-content .joubel-exportable-header button {
+  font-family: Sans-Serif;
+  font-size: 1em;
+  background: 0 0;
+  border: 0;
+  overflow: visible;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .h5p-documentation-tool-xr .h5p-documentation-tool-xr-main-content {
   display: -webkit-box;
   display: -webkit-flex;
