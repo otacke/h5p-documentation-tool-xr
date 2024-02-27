@@ -28,7 +28,7 @@
       "importance": "high",
       "description": "Library for this slide.",
       "options": [
-        "H5P.StandardPageXR 1.5",
+        "H5P.StandardPageXR 1.6",
         "H5P.GoalsPageXR 1.5",
         "H5P.GoalsAssessmentPageXR 1.4",
         "H5P.DocumentExportPageXR 1.5"
